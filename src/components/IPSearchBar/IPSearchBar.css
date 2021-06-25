@@ -1,0 +1,37 @@
+.IP-search-bar-container {
+    width: 27rem;
+    max-width: 80%;
+    display: flex;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+input {
+    border: none;
+}
+
+.IP-input{
+    flex-grow: 1;
+    border-radius: 10px 0px 0px 10px;
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    padding-left: 25px;
+    color: hsl(0, 0%, 17%);
+}
+
+.IP-search{
+    width: 50px;
+    height: 50px;
+    border-radius: 0px 10px 10px 0px;
+    background-color: hsl(0, 0%, 0%);
+    background-image: url('../../images/icon-arrow.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.IP-search:hover {
+    background-color: hsl(0, 0%, 59%);
+    cursor: pointer;
+}

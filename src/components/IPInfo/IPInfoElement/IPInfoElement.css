@@ -1,0 +1,40 @@
+.IP-info-element{
+    flex: 1 1 0;
+    font-family: 'Rubik', sans-serif;
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.IP-info-lable{
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: hsl(0, 0%, 59%);
+    letter-spacing: 1px;
+}
+
+.IP-info-data {
+    color: hsl(0, 0%, 17%);
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 5px 0px 10px 0px;
+}
+
+.IP-info-data:last-child{
+    margin-bottom: 0px;
+}
+
+@media (min-width: 700px){
+    .IP-info-element{
+        align-items: flex-start;
+    }
+
+    .IP-info-element:not(:last-child){
+        border-right: 1px solid hsl(0, 0%, 59%) ;
+    }
+
+    .IP-info-data{
+        font-size: 1.5rem;
+    }
+}

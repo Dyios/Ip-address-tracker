@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import './App.css'
+
+import HeadSection from './components/HeadSection/HeadSection'
+import Map from './components/Map/Map'
+import { getIPAdressInfo } from './api/api'
 
 function App() {
+  const [ipAddressInfo, setipAddressInfo] = useState({
+    "ip": "",
+    "location": {
+      "city": "",
+      "lat": 0,
+      "lng": 0,
+      "country": "",
+      "postalCode": "",
+      "timezone": "",
+    },
+    "isp": "",
+  })
+
+  useEffect(() => {
+    getIPAdressInfo('').then(info => {
+      console.log(info);
+      setipAddressInfo(info);
+    })
+    .catch(e=>alert(e))
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <HeadSection ipAddressState={[ipAddressInfo, setipAddressInfo]} />
+      <Map pos={[ipAddressInfo.location.lat, ipAddressInfo.location.lng]} />
     </div>
   );
 }
