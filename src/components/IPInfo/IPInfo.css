@@ -15,7 +15,9 @@
 @media (min-width : 700px) {
     .IP_info_container {
         flex-direction: row;
-        top: 70%;
+        top: auto;
+        bottom: 0;
+        transform: translateY(50%);
         width: 80%;
         padding: 2rem 1.5rem;
     }
